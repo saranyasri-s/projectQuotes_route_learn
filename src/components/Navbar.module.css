@@ -1,0 +1,25 @@
+.header {
+  background-color: blue;
+  display: flex;
+  color: beige;
+
+  justify-content: space-around;
+  align-items: center;
+}
+.Links {
+  display: flex;
+  color: beige;
+}
+.Links a {
+  color: beige;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.Links a:hover,
+.Links a:active,
+.Links a.active {
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}

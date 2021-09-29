@@ -1,0 +1,52 @@
+.newQuote {
+  width: 50%;
+  margin: 2rem auto;
+  border: 2px solid blue;
+  padding: 1rem;
+  display: flex;
+  border-radius: 10px;
+  flex-flow: column;
+  background-color: rgb(216 229 241);
+  box-shadow: 2px 2px 2px 2px #3265ccab;
+}
+.newQuote div {
+  display: flex;
+  margin: 1rem;
+  flex-flow: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+input,
+textarea {
+  width: 90%;
+  padding: 1rem;
+  font-size: large;
+  border: 1px solid blue;
+  border-radius: 5px;
+  color: #09094c;
+}
+label {
+  margin: 1rem;
+  font-weight: bold;
+}
+input:focus,
+textarea:focus-visible,
+textarea:focus {
+  border: 2px solid blue;
+}
+.button {
+  text-align: end;
+  width: 90%;
+}
+.button button {
+  padding: 0.5rem 2rem;
+  border: 2px solid blue;
+  background-color: #182dab;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button button:hover {
+  background-color: rgb(15, 15, 110);
+}
