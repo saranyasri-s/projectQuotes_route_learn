@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./AddQuote.module.css";
-function AddQuote() {
+function AddQuote(props) {
   const [name, setName] = useState("");
   const [quote, setQuote] = useState("");
   const nameChangeHandler = (e) => {
@@ -11,8 +11,8 @@ function AddQuote() {
   };
   const submitQuoteHandler = (e) => {
     e.preventDefault();
-    const newQuote = { name: name, quote: quote };
-    console.log(newQuote);
+    const newQuote = { name: name, quote: quote, id: name };
+    props.onAdd(newQuote);
     setName("");
     setQuote("");
   };

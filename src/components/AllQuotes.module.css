@@ -1,0 +1,21 @@
+.AllQuotes {
+  background-color: #e9e2f1;
+  border: 2px solid blue;
+  width: 60%;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+.AllQuotes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem;
+}
+.AllQuotes ul li {
+  border: 2px solid rgb(38, 215, 228);
+  padding: 1rem 1rem;
+  background-color: #232431;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 1rem;
+}

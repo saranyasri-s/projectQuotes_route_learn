@@ -1,0 +1,28 @@
+.quote {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+div.button {
+  align-self: flex-end;
+  display: flex;
+}
+.quote p {
+  font-style: italic;
+  font-weight: 500;
+}
+.button button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid white;
+  background-color: #1647c5;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+.button button:hover {
+  background-color: thistle;
+  color: rgb(19, 3, 3);
+  border: 2px solid white;
+}
