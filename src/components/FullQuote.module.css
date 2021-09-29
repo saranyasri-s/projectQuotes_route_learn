@@ -1,0 +1,27 @@
+.FullQuote {
+  color: blue;
+  display: flex;
+  flex-flow: column;
+  margin: 2rem;
+  border: 2px solid blue;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+}
+.quotePart {
+  background-color: #3e3d4e;
+  border: 2px solid #8c1ea0;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: left;
+  color: #f5f5fa;
+  font-weight: bold;
+}
+.quotePart h3 {
+  text-transform: capitalize;
+}
+
+.quotePart p {
+  text-align: right;
+  font-style: italic;
+}

@@ -13,8 +13,8 @@ function Quote(props) {
       <h3>{props.quote}</h3>
       <p>{props.name}</p>
       <div className={classes.button}>
-        <Link to="/All-Quotes/quote/">
-          <button onClick={onOpenQuoteHandler}>View full screen</button>
+        <Link onClick={onOpenQuoteHandler} to="/All-Quotes/full-Quote">
+          <button>View full screen</button>
         </Link>
       </div>
     </div>
