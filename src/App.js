@@ -37,10 +37,13 @@ function App() {
           <Route path="/New-Quote">
             <AddQuote onAdd={quoteAddHandler}></AddQuote>
           </Route>
+          <Route path="/All-Quotes/quote/:saranId">
+            <FullQuote key={fullQuote.id} quoteFull={fullQuote}></FullQuote>
+          </Route>
+          <Route path="*">
+            <p>Page not found</p>
+          </Route>
         </Switch>
-        <Route path="/All-Quotes/:full-Quote">
-          <FullQuote quoteFull={fullQuote}></FullQuote>
-        </Route>
       </main>
     </div>
   );

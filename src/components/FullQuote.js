@@ -1,15 +1,19 @@
-import React, { useState, useRef } from "react";
-
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import classes from "./FullQuote.module.css";
 function FullQuote(props) {
   const [comments, setComments] = useState([]);
-  const commentRef = useRef();
+  const [newComment, setNewComment] = useState("");
+  const params = useParams();
   const commentSubmitHAndler = (e) => {
-    const newComments = [...comments];
-    console.log(newComments);
-    console.log(commentRef.current.value);
-    newComments.push(commentRef.current.value);
-    setComments(newComments);
+    e.preventDefault();
+    const commentsOld = [...comments];
+    commentsOld.push(newComment);
+    setComments(commentsOld);
+    setNewComment("");
+  };
+  const commentChangeHandler = (e) => {
+    setNewComment(e.target.value);
   };
   const fullQuote = props.quoteFull;
   return (
@@ -23,8 +27,13 @@ function FullQuote(props) {
           return <p>{comment}</p>;
         })}
       <div>
+        <p style={{ color: "violet" }}>{params.saranId}</p>
         <label> comment </label>
-        <input ref={commentRef}></input>
+        <input
+          value={newComment}
+          type="text"
+          onChange={commentChangeHandler}
+        ></input>
 
         <button onClick={commentSubmitHAndler}>add comment</button>
       </div>
