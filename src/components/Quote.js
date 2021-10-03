@@ -3,13 +3,13 @@ import classes from "./Quote.module.css";
 import { Link, useRouteMatch } from "react-router-dom";
 function Quote(props) {
   const match = useRouteMatch();
-  const onOpenQuoteHandler = () => {
-    const name = props.name;
-    const quote = props.quote;
-    const fullQuote = { name: name, quote: quote, id: props.id };
-    props.onOpenQuote(fullQuote);
-    console.log(props.id);
-  };
+  // const onOpenQuoteHandler = () => {
+  //   const name = props.name;
+  //   const quote = props.quote;
+  //   const fullQuote = { name: name, quote: quote, id: props.id };
+  //   // props.onOpenQuote(fullQuote);
+  //   console.log(props.id);
+  // };
   // const toPath = "/All-Quotes/" + props.id;
 
   const toPath = `${match.url}` + "/" + props.id;
@@ -20,7 +20,7 @@ function Quote(props) {
       <h3>{props.quote}</h3>
       <p>{props.name}</p>
       <div className={classes.button}>
-        <Link onClick={onOpenQuoteHandler} to={toPath}>
+        <Link to={toPath}>
           <button>View full screen</button>
         </Link>
       </div>

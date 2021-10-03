@@ -1,19 +1,18 @@
 import classes from "./App.module.css";
 import Navbar from "./components/Navbar";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Redirect, Switch, useHistory } from "react-router-dom";
 import AddQuote from "./components/AddQuote";
 import AllQuotes from "./components/AllQuotes";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FullQuote from "./components/FullQuote";
 function App() {
   const [quotesList, setQuotesList] = useState([]);
   const [fullQuote, setFullQuote] = useState({});
-
+  const history = useHistory();
   const quoteAddHandler = (newQuote) => {
-    const quotes = [...quotesList];
-    quotes.push(newQuote);
-    setQuotesList(quotes);
+    history.push("/AllQuotes");
   };
+
   const openFullQuoteHandler = (FullQuote) => {
     setFullQuote(FullQuote);
     console.log("app");
@@ -37,7 +36,7 @@ function App() {
           <Route path="/New-Quote">
             <AddQuote onAdd={quoteAddHandler}></AddQuote>
           </Route>
-          <Route path="/All-Quotes/:saranId">
+          <Route path="/All-Quotes/:quoteId">
             <FullQuote key={fullQuote.id} quoteFull={fullQuote}></FullQuote>
           </Route>
           <Route path="*">

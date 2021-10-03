@@ -16,14 +16,33 @@ function AddQuote(props) {
   const quoteChangeHandler = (e) => {
     setQuote(e.target.value);
   };
-  const submitQuoteHandler = (e) => {
+  const submitQuoteHandler = async (e) => {
     e.preventDefault();
-    const newQuote = { name: name, quote: quote, id: name };
-    props.onAdd(newQuote);
-    setName("");
-    setQuote("");
-
-    history.push("/All-Quotes");
+    const newQuote = { name: name, quote: quote };
+    if (newQuote.name && newQuote.quote) {
+      try {
+        const response = await fetch(
+          "https://quotes-c924e-default-rtdb.firebaseio.com/quotes.json",
+          {
+            method: "POST",
+            body: JSON.stringify(newQuote),
+          }
+        );
+        if (!response.ok) {
+          throw new Error("error occured");
+        }
+        const data = await response.json();
+        setName("");
+        setQuote("");
+        props.onAdd(newQuote);
+        history.push("/All-Quotes");
+      } catch (er) {
+        console.log(er);
+        setName("");
+        setQuote("");
+        prompt(er);
+      }
+    }
   };
   const formFilledHandler = () => {
     setIsFilling(false);
