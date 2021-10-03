@@ -1,13 +1,19 @@
-import React, { useState } from "react";
 import classes from "./AllQuotes.module.css";
 import Quote from "./Quote";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 function AllQuotes(props) {
   const history = useHistory();
   const location = useLocation();
+  const match = useRouteMatch();
+  // sample match object
+  // match:{
+  //   path:"/AllQuotes/:quoteId",
+  //   url:"/AllQuotes/q1"
+  // }
   console.log(location);
   const addSortQueryHandler = () => {
-    history.push("/All-Quotes?sort=asc");
+    history.push(`${match.url}?sort=asc`);
+    // history.push("/AllQuotes?sort=asc")
   };
   const queryParams = new URLSearchParams(location.search);
 

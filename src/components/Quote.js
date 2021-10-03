@@ -1,7 +1,8 @@
 import React from "react";
 import classes from "./Quote.module.css";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 function Quote(props) {
+  const match = useRouteMatch();
   const onOpenQuoteHandler = () => {
     const name = props.name;
     const quote = props.quote;
@@ -9,7 +10,10 @@ function Quote(props) {
     props.onOpenQuote(fullQuote);
     console.log(props.id);
   };
-  const toPath = "/All-Quotes/quote/" + props.id;
+  // const toPath = "/All-Quotes/" + props.id;
+
+  const toPath = `${match.url}` + "/" + props.id;
+  //here i replaced the hard coded url with match.url//
 
   return (
     <div className={classes.quote}>

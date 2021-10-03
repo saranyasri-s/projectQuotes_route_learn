@@ -37,7 +37,7 @@ function App() {
           <Route path="/New-Quote">
             <AddQuote onAdd={quoteAddHandler}></AddQuote>
           </Route>
-          <Route path="/All-Quotes/quote/:saranId">
+          <Route path="/All-Quotes/:saranId">
             <FullQuote key={fullQuote.id} quoteFull={fullQuote}></FullQuote>
           </Route>
           <Route path="*">
